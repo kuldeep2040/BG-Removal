@@ -2,9 +2,8 @@ import mongoose from "mongoose";
 
 const connectDB = async ()=>{
 
-  await mongoose.connect(`${process.env.MONGO_URI}`)
   const db = mongoose.connection;
-
+  
   db.on("connected", () => {
     console.log("MongoDB Server is connected.");
   });
@@ -14,7 +13,8 @@ const connectDB = async ()=>{
   db.on("disconnected", () => {
     console.log("MongoDB Server is disconnected.");
   });
-
+  
+  await mongoose.connect(`${process.env.MONGO_URI}`)
 
   
 }
