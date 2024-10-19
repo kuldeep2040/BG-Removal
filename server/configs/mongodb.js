@@ -14,7 +14,7 @@ const connectDB = async ()=>{
     console.log("MongoDB Server is disconnected.");
   });
   
-  await mongoose.connect(`${process.env.MONGO_URI}`)
+  await mongoose.connect(`${process.env.MONGODB_URI}/bg-removal`)
 
   
 }
